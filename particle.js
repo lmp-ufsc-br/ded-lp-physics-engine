@@ -1,5 +1,5 @@
-function Particle(position){
-  this.diameter = random(5, 15);
+function Particle(position, diameter){
+  this.diameter = diameter;
   this.pos = position.copy();
   this.vel = createVector(0,0);
   this.acc = createVector(0,0);
@@ -18,7 +18,9 @@ function Particle(position){
   
   this.display = () => {
     fill(255, this.lifeSpan);
+    noStroke();
     ellipse(this.pos.x, this.pos.y, this.diameter);
   }
   
 }
+
